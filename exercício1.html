@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Raiz Quadrada</title>
+</head>
+<body>
+<script>
+
+
+	
+		var valora = prompt("Informe o valor de a:");
+		var valorb = prompt("Informe o valor de b:");
+		var valorc = prompt("Informe o valor de c:");
+		var coeficiente0
+		var coeficiente1;
+		var coeficiente2;
+
+		var delta = (valorb * valorb) - 4 * valora * valorc;
+
+		document.write("Valor de Delta => " + delta +"<br/>"); 
+
+		if(delta < 0){
+		  document.write("Delta negativo, não possui raízes reais. <br/>");  
+		
+		} 
+		else if(delta==0){
+			document.write("Delta igual a zero, somente uma raiz. <br/>")
+			coeficiente0 =(-valorb/2*valora)
+			 document.write("x = " + coeficiente0 + "<br/>");
+		}
+
+		else{
+		  
+		  document.write(" Delta positivo, duas raízes diferentes: <br/>");  
+		  
+		  coeficiente1 = (-valorb + Math.sqrt(delta)) / (2 * valora);
+		  coeficiente2 = (-valorb - Math.sqrt(delta)) / (2 * valora);
+		  
+		  document.write("x1 = " + coeficiente1 + "<br/>");
+		  document.write("x2 = " + coeficiente2 + "<br/>");
+		}
+
+
+	</script>
+	
+
+</body>
+</html>

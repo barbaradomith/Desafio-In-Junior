@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade </title>
+</head>
+<body>
+    <script>
+        function verificarIdades() {
+            var pessoas = [];
+            var anoAtual = 2025;
+
+            var qtd = prompt("Quantas pessoas quer verificar? (até 5)");
+            qtd = parseInt(qtd);
+
+            for (var i = 0; i < qtd; i++) {
+                var nome = prompt("Digite o nome da pessoa:");
+                var anoNasc = prompt("Digite o ano de nascimento:");
+                anoNasc = parseInt(anoNasc);
+
+                pessoas.push({ nome: nome, anoNascimento: anoNasc });
+            }
+
+            for (var j = 0; j < pessoas.length; j++) {
+                var idade = anoAtual - pessoas[j].anoNascimento;
+                if (idade >= 18) {
+                document.write(pessoas[j].nome + ": Maior de idade<br>");
+            } else {
+                document.write(pessoas[j].nome + ": Menor de idade<br>");
+                }
+            }     
+        }
+
+        verificarIdades();
+
+
+    </script>
+    
+</body>
+</html>

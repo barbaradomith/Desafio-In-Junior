@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palíndromo</title>
+</head>
+<body>
+    <script>
+  
+        var frase = prompt("Digite uma frase:");
+        var limpa = frase.toLowerCase().replace(/[^a-z]/g, "");  
+        var invertida = limpa.split("").reverse().join(""); 
+  
+        if(limpa === invertida){
+            document.write("É um palíndromo!");
+        } else {
+            document.write("Não é um palíndromo.");
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência Fibonacci</title>
+</head>
+<body>
+    <script>
+        function fibonacci(n) {
+            if (n == 0) return 0;
+            if (n == 1) return 1;
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        var termos = prompt("Digite quantos termos da sequência deseja ver:");
+        termos = parseInt(termos);
+ 
+        document.write("Sequência de Fibonacci:<br>");
+        for (var i = 0; i < termos; i++) {
+            document.write(fibonacci(i) + " ");       
+        }
+
+    </script>
+    
+</body>
+</html>

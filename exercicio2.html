@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+</head>
+<body>
+    <script>
+        
+        while (true) {           
+            var entrada = prompt("Digite um número inteiro:");
+          
+            if (entrada === null) {
+                alert("Programa encerrado.");
+                break;
+            }
+
+            var numero = parseInt(entrada);            
+            if (isNaN(numero) || numero < 0 || !Number.isInteger(numero)) {
+                alert("Por favor, digite um número inteiro positivo válido.");
+                continue; 
+            }           
+            var resultado = 1;
+            for (var i = 1; i <= numero; i++) {
+                resultado = resultado * i;
+            }
+
+            alert("O fatorial de " + numero + " é: " + resultado);
+            
+            var resposta = prompt("Deseja calcular outro fatorial? (S/N)");
+
+            if (resposta === null || resposta.toUpperCase() === "N") {
+                alert("Programa encerrado.");
+                break;
+            }
+            if (resposta.toUpperCase() !== "S") {
+                alert("Resposta inválida. Programa encerrado.");
+                break;
+            }
+        }
+    </script>
+    
+</body>
+</html>

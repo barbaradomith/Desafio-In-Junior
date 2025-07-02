@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores de Livros</title>
+</head>
+<body>
+
+    <script>
+        const booksByCategory = [
+            {
+                category: "Romance",
+                books: [
+                        {
+                        title: "O Sol Também é Uma Estrela",
+                        author: "Nicola Yoon",
+                        },
+                        {
+                        title: "O Noivo da Minha Melhor Amiga",
+                        author: "Emily Giffin"
+                        },
+                        {
+                        title: "Orgulho e Preconceito",
+                        author: "Jane Austen",
+                        }
+                ],
+            },
+            {
+                category: "Fantasia",
+                books: [
+                        {
+                        title: "Harry Potter e a Pedra Filosofal",
+                        author: "J.K. Rowling",
+                        },
+                        {
+                        title: "O Hobbit", 
+                        author: "J.R.R. Tolkien"
+                        },
+                        {
+                        title: "Eragon", 
+                        author: "Christopher Paolini", 
+                        },
+                        {
+                        title: "O Nome do Vento", 
+                        author: "Patrick Rothfuss", 
+                        },
+                ],
+            },
+            {   
+                category: "Suspense",
+                books: [
+                        {
+                        title: "A Garota no Trem ",
+                        author: "Paula Hawkins",
+                        },
+                        {
+                        title: "O Silêncio dos Inocentes",
+                        author: "Thomas Harris"
+                        },
+                ],
+            },
+            {   
+                category: "Ficção Cietífica",
+                books: [
+                        {
+                        title: "Duna ",
+                        author: "Frank Hebert",
+                        },
+                        {
+                        title: "Neuromancer",
+                        author: "William Gibsom"
+                        },
+                        {
+                        title: "Fundação ",
+                        author: "Isaac Asimov",
+                        },
+                        {
+                        title: "1984",
+                        author: "George Orwell"
+                        },
+                        {
+                        title: "O Fim da Infância",
+                        author: "Arthur C. Clarke"
+                        },
+                    ],    
+
+                },
+            ];
+            function authors(categories) {
+                var allAuthors = [];
+
+                for (var i = 0; i < categories.length; i++) {
+                    var books = categories[i].books;
+
+                    for (var j = 0; j < books.length; j++) {
+                        var author = books[j].author;
+
+                        if (allAuthors.indexOf(author) === -1) {
+                            allAuthors.push(author);
+                        }
+                    }
+                }
+
+                return allAuthors;
+            }
+
+            var listaAutores = authors(booksByCategory);
+            document.write("<h3>Todos os autores:</h3>");
+            for (var i = 0; i < listaAutores.length; i++) {
+                document.write(listaAutores[i] + "<br>");
+            }
+
+            
+    </script>
+</body>
+</html>
