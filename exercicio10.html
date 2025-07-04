@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento</title>
+</head>
+<body>
+    <script>
+        var fila = [];
+
+         var opcao;
+
+         do {
+        var lista = "";
+        if (fila.length === 0) {
+            lista = "A fila está vazia.\n";
+        } else {
+            for (var i = 0; i < fila.length; i++) {
+            lista += (i + 1) + "º " + fila[i] + "\n";
+            }
+        }
+
+        opcao = prompt(
+            lista +
+                "\nEscolha uma opção:\n" +
+                "1 - Novo Cliente\n" +
+                "2 - Atender Cliente\n" +
+                "3 - Sair"
+        );
+
+        if (opcao === "1") {
+            var nome = prompt("Digite o nome do cliente:");
+                fila.push(nome);
+        } else if (opcao === "2") {
+        if (fila.length === 0) {
+            alert("Nenhum cliente na fila.");
+        } else {
+            var atendido = fila.shift();
+            alert("Atendendo: " + atendido);
+        }
+        } else if (opcao === "3") {
+        alert("Encerrando o programa...");
+        } else {
+        alert("Opção inválida. Tente novamente.");
+        }
+
+    } while (opcao !== "3");
+</script>
+</body>
+</html>

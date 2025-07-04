@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogaores</title>
+</head>
+<body>
+    <script>
+        var time = [];
+
+        function adicionarJogador() {
+            var nome = prompt("Digite o nome do jogador:").trim();
+            var idade = parseInt(prompt("Digite a idade do jogador:").trim());
+            var posicao = prompt("Digite a posição do jogador:").trim().toLowerCase();
+            var pontuacao = parseInt(prompt("Digite a pontuação do jogador:").trim());
+
+            var jogador = {
+            nome: nome,
+            idade: idade,
+            posicao: posicao,
+            pontuacao: pontuacao
+            };
+            
+            time.push(jogador);
+            alert("Jogador adicionado!");
+        }
+
+        function buscarPorPosicao() {
+            var posicaoBusca = prompt("Digite a posição para buscar:").trim().toLowerCase();
+            var lista = "";
+
+            for (var i = 0; i < time.length; i++) {
+            if (time[i].posicao === posicaoBusca) {
+                lista += "- " + time[i].nome + ", Pontuação: " + time[i].pontuacao + "\n";
+            }
+            }
+
+            if (lista === "") {
+            alert("Nenhum jogador encontrado nessa posição.");
+            } else {
+            alert("Jogadores na posição '" + posicaoBusca + "':\n" + lista);
+            }
+        }
+
+        var opcao;
+
+        do {
+            opcao = prompt(
+            "MENU:\n" +
+            "1 - Adicionar Jogador\n" +
+            "2 - Buscar Jogador por Posição\n" +
+            "3 - Sair"
+            );
+
+            if (opcao === "1") {
+            adicionarJogador();
+            } else if (opcao === "2") {
+            buscarPorPosicao();
+            } else if (opcao === "3") {
+            alert("Encerrando programa.");
+            } else {
+            alert("Opção inválida. Tente novamente.");
+            }
+
+        } while (opcao !== "3");
+</script>
+
+    </script>
+</body>
+</html>
